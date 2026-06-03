@@ -1,0 +1,1215 @@
+{
+    "features": {
+        "BonePositions": {
+            "types": [
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3",
+                "Vector3"
+            ]
+        },
+        "BoneRotations": {
+            "types": [
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion",
+                "Quaternion"
+            ]
+        }
+    },
+    "skeleton": {
+        "joints": [
+            {
+                "distal": "Spine0",
+                "index": 1,
+                "proximal": "Hips",
+                "offset": {
+                    "x": 3.353364252944857e-10,
+                    "y": 0.0976572036743164,
+                    "z": 0.007921218872070312
+                },
+                "length": 0.09797793626785278,
+                "localOffset": {
+                    "x": 6.331356875511121e-17,
+                    "y": 0.09797792881727219,
+                    "z": -1.4967797667964078e-08
+                },
+                "pairedBone": ""
+            },
+            {
+                "distal": "ThighLeft",
+                "index": 54,
+                "proximal": "Hips",
+                "offset": {
+                    "x": -0.0866064578294754,
+                    "y": -0.05582517385482788,
+                    "z": -0.0021869540214538574
+                },
+                "length": 0.10306265205144882,
+                "localOffset": {
+                    "x": -0.0866064578294754,
+                    "y": -0.05581923946738243,
+                    "z": 0.0023335099685937166
+                },
+                "pairedBone": "ThighRight"
+            },
+            {
+                "distal": "ThighRight",
+                "index": 59,
+                "proximal": "Hips",
+                "offset": {
+                    "x": 0.0866064578294754,
+                    "y": -0.05582517385482788,
+                    "z": -0.0021869540214538574
+                },
+                "length": 0.10306265205144882,
+                "localOffset": {
+                    "x": 0.0866064578294754,
+                    "y": -0.05581923946738243,
+                    "z": 0.002333509037271142
+                },
+                "pairedBone": "ThighLeft"
+            },
+            {
+                "distal": "Spine1",
+                "index": 2,
+                "proximal": "Spine0",
+                "offset": {
+                    "x": 7.281657943281061e-09,
+                    "y": 0.06968283653259277,
+                    "z": -0.004279136657714844
+                },
+                "length": 0.06981410086154938,
+                "localOffset": {
+                    "x": -5.698709025998068e-16,
+                    "y": 0.06981410086154938,
+                    "z": 8.885828606253199e-08
+                },
+                "pairedBone": ""
+            },
+            {
+                "distal": "Chest",
+                "index": 3,
+                "proximal": "Spine1",
+                "offset": {
+                    "x": 4.6095287586922495e-09,
+                    "y": 0.1064310073852539,
+                    "z": -0.005088329315185547
+                },
+                "length": 0.10655257105827332,
+                "localOffset": {
+                    "x": -5.571953827694133e-15,
+                    "y": 0.10655257105827332,
+                    "z": 2.1584387610573685e-08
+                },
+                "pairedBone": ""
+            },
+            {
+                "distal": "ClavicleLeft",
+                "index": 6,
+                "proximal": "Chest",
+                "offset": {
+                    "x": -0.024145008996129036,
+                    "y": 0.18990206718444824,
+                    "z": 0.06280291080474854
+                },
+                "length": 0.2014695554971695,
+                "localOffset": {
+                    "x": -0.024145010858774185,
+                    "y": 0.18971583247184753,
+                    "z": 0.06336325407028198
+                },
+                "pairedBone": "ClavicleRight"
+            },
+            {
+                "distal": "ClavicleRight",
+                "index": 7,
+                "proximal": "Chest",
+                "offset": {
+                    "x": 0.024144988507032394,
+                    "y": 0.18990206718444824,
+                    "z": 0.06280291080474854
+                },
+                "length": 0.2014695554971695,
+                "localOffset": {
+                    "x": 0.024144986644387245,
+                    "y": 0.18971583247184753,
+                    "z": 0.06336326152086258
+                },
+                "pairedBone": "ClavicleLeft"
+            },
+            {
+                "distal": "Neck",
+                "index": 4,
+                "proximal": "Chest",
+                "offset": {
+                    "x": -1.189118847833015e-08,
+                    "y": 0.19178223609924316,
+                    "z": -0.0005662441253662109
+                },
+                "length": 0.19178307056427002,
+                "localOffset": {
+                    "x": 6.1072074995912815e-15,
+                    "y": 0.19178307056427002,
+                    "z": -7.073396091072937e-08
+                },
+                "pairedBone": ""
+            },
+            {
+                "distal": "BicepLeft",
+                "index": 8,
+                "proximal": "ClavicleLeft",
+                "offset": {
+                    "x": -0.1772792637348175,
+                    "y": -7.271766662597656e-06,
+                    "z": 1.1920928955078125e-07
+                },
+                "length": 0.1772792637348175,
+                "localOffset": {
+                    "x": -7.694480785858104e-08,
+                    "y": 0.1772792935371399,
+                    "z": 1.143326642250031e-07
+                },
+                "pairedBone": "BicepRight"
+            },
+            {
+                "distal": "ForarmLeft",
+                "index": 9,
+                "proximal": "BicepLeft",
+                "offset": {
+                    "x": -0.2796987295150757,
+                    "y": -1.1444091796875e-05,
+                    "z": 0.0
+                },
+                "length": 0.2796987295150757,
+                "localOffset": {
+                    "x": 6.66874200305756e-08,
+                    "y": 0.27969878911972046,
+                    "z": 2.091751980515255e-07
+                },
+                "pairedBone": "ForarmRight"
+            },
+            {
+                "distal": "HandLeft",
+                "index": 10,
+                "proximal": "ForarmLeft",
+                "offset": {
+                    "x": -0.2600556015968323,
+                    "y": -1.0848045349121094e-05,
+                    "z": -1.1920928955078125e-07
+                },
+                "length": 0.2600556015968323,
+                "localOffset": {
+                    "x": 1.8121333766885073e-07,
+                    "y": 0.26005566120147705,
+                    "z": -1.3182539504441593e-08
+                },
+                "pairedBone": "HandRight"
+            },
+            {
+                "distal": "Index0Left",
+                "index": 11,
+                "proximal": "HandLeft",
+                "offset": {
+                    "x": -0.0957522988319397,
+                    "y": 0.0007935762405395508,
+                    "z": 0.02326798439025879
+                },
+                "length": 0.09854202717542648,
+                "localOffset": {
+                    "x": -0.023267965763807297,
+                    "y": 0.0957522839307785,
+                    "z": 0.0007975574699230492
+                },
+                "pairedBone": "Index0Right"
+            },
+            {
+                "distal": "Middle0Left",
+                "index": 15,
+                "proximal": "HandLeft",
+                "offset": {
+                    "x": -0.09374511241912842,
+                    "y": 0.004757404327392578,
+                    "z": 0.0003490447998046875
+                },
+                "length": 0.09386640042066574,
+                "localOffset": {
+                    "x": -0.0003490233502816409,
+                    "y": 0.09374493360519409,
+                    "z": 0.004761310759931803
+                },
+                "pairedBone": "Middle0Right"
+            },
+            {
+                "distal": "Pinky0Left",
+                "index": 23,
+                "proximal": "HandLeft",
+                "offset": {
+                    "x": -0.08735829591751099,
+                    "y": 0.0006129741668701172,
+                    "z": -0.04615640640258789
+                },
+                "length": 0.09880415350198746,
+                "localOffset": {
+                    "x": 0.04615643620491028,
+                    "y": 0.08735828101634979,
+                    "z": 0.0006166304228827357
+                },
+                "pairedBone": "Pinky0Right"
+            },
+            {
+                "distal": "Ring0Left",
+                "index": 19,
+                "proximal": "HandLeft",
+                "offset": {
+                    "x": -0.09174555540084839,
+                    "y": 0.004327893257141113,
+                    "z": -0.024352669715881348
+                },
+                "length": 0.09502121061086655,
+                "localOffset": {
+                    "x": 0.024352695792913437,
+                    "y": 0.09174539148807526,
+                    "z": 0.004331725183874369
+                },
+                "pairedBone": "Ring0Right"
+            },
+            {
+                "distal": "Thumb0Left",
+                "index": 27,
+                "proximal": "HandLeft",
+                "offset": {
+                    "x": -0.060062527656555176,
+                    "y": -0.0027219057083129883,
+                    "z": 0.03994560241699219
+                },
+                "length": 0.072184257209301,
+                "localOffset": {
+                    "x": -0.03994559496641159,
+                    "y": 0.060062654316425323,
+                    "z": -0.0027194181457161903
+                },
+                "pairedBone": "Thumb0Right"
+            },
+            {
+                "distal": "Index1Left",
+                "index": 12,
+                "proximal": "Index0Left",
+                "offset": {
+                    "x": -0.031041741371154785,
+                    "y": -1.3113021850585938e-06,
+                    "z": 0.0
+                },
+                "length": 0.031041741371154785,
+                "localOffset": {
+                    "x": 7.401162349651713e-09,
+                    "y": 0.031041746959090233,
+                    "z": -1.7990274159274122e-08
+                },
+                "pairedBone": "Index1Right"
+            },
+            {
+                "distal": "Index2Left",
+                "index": 13,
+                "proximal": "Index1Left",
+                "offset": {
+                    "x": -0.030361950397491455,
+                    "y": -1.1920928955078125e-06,
+                    "z": 0.0
+                },
+                "length": 0.030361950397491455,
+                "localOffset": {
+                    "x": 7.2390662353427615e-09,
+                    "y": 0.030361955985426903,
+                    "z": 7.28964693053058e-08
+                },
+                "pairedBone": "Index2Right"
+            },
+            {
+                "distal": "Index2LeftEnd",
+                "index": 14,
+                "proximal": "Index2Left",
+                "offset": {
+                    "x": -0.034324824810028076,
+                    "y": -1.430511474609375e-06,
+                    "z": 0.0
+                },
+                "length": 0.034324824810028076,
+                "localOffset": {
+                    "x": 1.0229594948896192e-08,
+                    "y": 0.03432483226060867,
+                    "z": -4.1444181420047244e-10
+                },
+                "pairedBone": "Index2RightEnd"
+            },
+            {
+                "distal": "Middle1Left",
+                "index": 16,
+                "proximal": "Middle0Left",
+                "offset": {
+                    "x": -0.03572720289230347,
+                    "y": -1.5497207641601562e-06,
+                    "z": 0.0
+                },
+                "length": 0.03572720289230347,
+                "localOffset": {
+                    "x": 2.1295072372140567e-09,
+                    "y": 0.03572720289230347,
+                    "z": -6.013045350528046e-08
+                },
+                "pairedBone": "Middle1Right"
+            },
+            {
+                "distal": "Middle2Left",
+                "index": 17,
+                "proximal": "Middle1Left",
+                "offset": {
+                    "x": -0.03450256586074829,
+                    "y": -1.5497207641601562e-06,
+                    "z": 0.0
+                },
+                "length": 0.03450256586074829,
+                "localOffset": {
+                    "x": 2.0565131819694216e-09,
+                    "y": 0.03450256586074829,
+                    "z": -1.1118979159618902e-07
+                },
+                "pairedBone": "Middle2Right"
+            },
+            {
+                "distal": "Middle2LeftEnd",
+                "index": 18,
+                "proximal": "Middle2Left",
+                "offset": {
+                    "x": -0.038040757179260254,
+                    "y": -1.430511474609375e-06,
+                    "z": 0.0
+                },
+                "length": 0.038040757179260254,
+                "localOffset": {
+                    "x": 1.133702909328349e-08,
+                    "y": 0.03804076462984085,
+                    "z": 1.5440485867657117e-07
+                },
+                "pairedBone": "Middle2RightEnd"
+            },
+            {
+                "distal": "Pinky1Left",
+                "index": 24,
+                "proximal": "Pinky0Left",
+                "offset": {
+                    "x": -0.029195129871368408,
+                    "y": -9.5367431640625e-07,
+                    "z": -1.1920928955078125e-07
+                },
+                "length": 0.029195129871368408,
+                "localOffset": {
+                    "x": 1.2617007882909093e-07,
+                    "y": 0.029195133596658707,
+                    "z": 2.6096100214090256e-07
+                },
+                "pairedBone": "Pinky1Right"
+            },
+            {
+                "distal": "Pinky2Left",
+                "index": 25,
+                "proximal": "Pinky1Left",
+                "offset": {
+                    "x": -0.028549671173095703,
+                    "y": -1.1920928955078125e-06,
+                    "z": 1.1920928955078125e-07
+                },
+                "length": 0.028549671173095703,
+                "localOffset": {
+                    "x": -1.1750759654205467e-07,
+                    "y": 0.028549671173095703,
+                    "z": -1.7586430089977512e-09
+                },
+                "pairedBone": "Pinky2Right"
+            },
+            {
+                "distal": "Pinky2LeftEnd",
+                "index": 26,
+                "proximal": "Pinky2Left",
+                "offset": {
+                    "x": -0.030848681926727295,
+                    "y": -1.3113021850585938e-06,
+                    "z": 0.0
+                },
+                "length": 0.030848681926727295,
+                "localOffset": {
+                    "x": 9.193623640157966e-09,
+                    "y": 0.030848689377307892,
+                    "z": -2.6033912803313797e-08
+                },
+                "pairedBone": "Pinky2RightEnd"
+            },
+            {
+                "distal": "Ring1Left",
+                "index": 20,
+                "proximal": "Ring0Left",
+                "offset": {
+                    "x": -0.0333823561668396,
+                    "y": -1.430511474609375e-06,
+                    "z": 0.0
+                },
+                "length": 0.0333823561668396,
+                "localOffset": {
+                    "x": 9.948717405450225e-09,
+                    "y": 0.0333823636174202,
+                    "z": -3.9681122387946743e-08
+                },
+                "pairedBone": "Ring1Right"
+            },
+            {
+                "distal": "Ring2Left",
+                "index": 21,
+                "proximal": "Ring1Left",
+                "offset": {
+                    "x": -0.03160947561264038,
+                    "y": -1.0728836059570312e-06,
+                    "z": 0.0
+                },
+                "length": 0.03160947561264038,
+                "localOffset": {
+                    "x": 7.536478108249867e-09,
+                    "y": 0.03160948306322098,
+                    "z": 2.4408222998317797e-07
+                },
+                "pairedBone": "Ring2Right"
+            },
+            {
+                "distal": "Ring2LeftEnd",
+                "index": 22,
+                "proximal": "Ring2Left",
+                "offset": {
+                    "x": -0.03565716743469238,
+                    "y": -1.5497207641601562e-06,
+                    "z": 0.0
+                },
+                "length": 0.03565716743469238,
+                "localOffset": {
+                    "x": 1.062666399320733e-08,
+                    "y": 0.03565717488527298,
+                    "z": -6.411350739199406e-08
+                },
+                "pairedBone": "Ring2RightEnd"
+            },
+            {
+                "distal": "Thumb1Left",
+                "index": 28,
+                "proximal": "Thumb0Left",
+                "offset": {
+                    "x": -0.029993891716003418,
+                    "y": -1.1920928955078125e-06,
+                    "z": 0.0
+                },
+                "length": 0.029993891716003418,
+                "localOffset": {
+                    "x": 8.939089468640304e-09,
+                    "y": 0.029993897303938866,
+                    "z": 5.666791125236159e-08
+                },
+                "pairedBone": "Thumb1Right"
+            },
+            {
+                "distal": "Thumb2Left",
+                "index": 29,
+                "proximal": "Thumb1Left",
+                "offset": {
+                    "x": -0.03105229139328003,
+                    "y": -1.0728836059570312e-06,
+                    "z": 0.0
+                },
+                "length": 0.03105229139328003,
+                "localOffset": {
+                    "x": 9.254495836330534e-09,
+                    "y": 0.031052296981215477,
+                    "z": 2.1994246424128505e-07
+                },
+                "pairedBone": "Thumb2Right"
+            },
+            {
+                "distal": "Thumb2LeftEnd",
+                "index": 30,
+                "proximal": "Thumb2Left",
+                "offset": {
+                    "x": -0.026321887969970703,
+                    "y": -1.0728836059570312e-06,
+                    "z": -1.1920928955078125e-07
+                },
+                "length": 0.026321887969970703,
+                "localOffset": {
+                    "x": 1.2705403662494064e-07,
+                    "y": 0.02632189355790615,
+                    "z": 2.299763934843213e-08
+                },
+                "pairedBone": "Thumb2RightEnd"
+            },
+            {
+                "distal": "BicepRight",
+                "index": 31,
+                "proximal": "ClavicleRight",
+                "offset": {
+                    "x": 0.17727935314178467,
+                    "y": -8.940696716308594e-06,
+                    "z": 1.1920928955078125e-07
+                },
+                "length": 0.17727935314178467,
+                "localOffset": {
+                    "x": 1.0864316379866068e-07,
+                    "y": 0.17727936804294586,
+                    "z": 2.153247891101273e-07
+                },
+                "pairedBone": "BicepLeft"
+            },
+            {
+                "distal": "ForarmRight",
+                "index": 32,
+                "proximal": "BicepRight",
+                "offset": {
+                    "x": 0.27969890832901,
+                    "y": -1.4424324035644531e-05,
+                    "z": 0.0
+                },
+                "length": 0.27969890832901,
+                "localOffset": {
+                    "x": -1.667608273692167e-08,
+                    "y": 0.27969890832901,
+                    "z": -3.6027607563937636e-09
+                },
+                "pairedBone": "ForarmLeft"
+            },
+            {
+                "distal": "HandRight",
+                "index": 33,
+                "proximal": "ForarmRight",
+                "offset": {
+                    "x": 0.2600557506084442,
+                    "y": -1.3470649719238281e-05,
+                    "z": 0.0
+                },
+                "length": 0.2600557506084442,
+                "localOffset": {
+                    "x": -1.550494665991664e-08,
+                    "y": 0.2600557506084442,
+                    "z": -6.269071661790804e-08
+                },
+                "pairedBone": "HandLeft"
+            },
+            {
+                "distal": "Index0Right",
+                "index": 34,
+                "proximal": "HandRight",
+                "offset": {
+                    "x": 0.09575235843658447,
+                    "y": 0.000792384147644043,
+                    "z": 0.02326798439025879
+                },
+                "length": 0.09854207932949066,
+                "localOffset": {
+                    "x": 0.02326798066496849,
+                    "y": 0.09575232118368149,
+                    "z": 0.0007973112515173852
+                },
+                "pairedBone": "Index0Left"
+            },
+            {
+                "distal": "Middle0Right",
+                "index": 38,
+                "proximal": "HandRight",
+                "offset": {
+                    "x": 0.0937451720237732,
+                    "y": 0.004756331443786621,
+                    "z": 0.0003489255905151367
+                },
+                "length": 0.09386640787124634,
+                "localOffset": {
+                    "x": 0.0003489215741865337,
+                    "y": 0.0937449261546135,
+                    "z": 0.004761164542287588
+                },
+                "pairedBone": "Middle0Left"
+            },
+            {
+                "distal": "Pinky0Right",
+                "index": 46,
+                "proximal": "HandRight",
+                "offset": {
+                    "x": 0.08735823631286621,
+                    "y": 0.0006120204925537109,
+                    "z": -0.04615652561187744
+                },
+                "length": 0.09880415350198746,
+                "localOffset": {
+                    "x": -0.04615653306245804,
+                    "y": 0.08735820651054382,
+                    "z": 0.0006165437516756356
+                },
+                "pairedBone": "Pinky0Left"
+            },
+            {
+                "distal": "Ring0Right",
+                "index": 42,
+                "proximal": "HandRight",
+                "offset": {
+                    "x": 0.09174555540084839,
+                    "y": 0.004326939582824707,
+                    "z": -0.0243527889251709
+                },
+                "length": 0.09502119570970535,
+                "localOffset": {
+                    "x": -0.024352794513106346,
+                    "y": 0.09174533188343048,
+                    "z": 0.0043316800147295
+                },
+                "pairedBone": "Ring0Left"
+            },
+            {
+                "distal": "Thumb0Right",
+                "index": 50,
+                "proximal": "HandRight",
+                "offset": {
+                    "x": 0.060062527656555176,
+                    "y": -0.002722620964050293,
+                    "z": 0.03994548320770264
+                },
+                "length": 0.07218421995639801,
+                "localOffset": {
+                    "x": 0.03994547948241234,
+                    "y": 0.06006266921758652,
+                    "z": -0.002719540847465396
+                },
+                "pairedBone": "Thumb0Left"
+            },
+            {
+                "distal": "Index1Right",
+                "index": 35,
+                "proximal": "Index0Right",
+                "offset": {
+                    "x": 0.03104180097579956,
+                    "y": -1.9073486328125e-06,
+                    "z": 0.0
+                },
+                "length": 0.03104180097579956,
+                "localOffset": {
+                    "x": -1.8508607979583758e-09,
+                    "y": 0.03104180283844471,
+                    "z": -3.068949183671066e-07
+                },
+                "pairedBone": "Index1Left"
+            },
+            {
+                "distal": "Index2Right",
+                "index": 36,
+                "proximal": "Index1Right",
+                "offset": {
+                    "x": 0.030362069606781006,
+                    "y": -1.5497207641601562e-06,
+                    "z": 0.0
+                },
+                "length": 0.030362069606781006,
+                "localOffset": {
+                    "x": -1.8102284116139344e-09,
+                    "y": 0.030362071469426155,
+                    "z": 1.5687358967397813e-08
+                },
+                "pairedBone": "Index2Left"
+            },
+            {
+                "distal": "Index2RightEnd",
+                "index": 37,
+                "proximal": "Index2Right",
+                "offset": {
+                    "x": 0.034324824810028076,
+                    "y": -1.6689300537109375e-06,
+                    "z": 0.0
+                },
+                "length": 0.034324824810028076,
+                "localOffset": {
+                    "x": -4.092086669515993e-09,
+                    "y": 0.034324828535318375,
+                    "z": 9.976681525358799e-08
+                },
+                "pairedBone": "Index2LeftEnd"
+            },
+            {
+                "distal": "Middle1Right",
+                "index": 39,
+                "proximal": "Middle0Right",
+                "offset": {
+                    "x": 0.03572732210159302,
+                    "y": -1.6689300537109375e-06,
+                    "z": 0.0
+                },
+                "length": 0.03572732210159302,
+                "localOffset": {
+                    "x": -4.259327113231848e-09,
+                    "y": 0.035727325826883316,
+                    "z": 1.7309974964518915e-07
+                },
+                "pairedBone": "Middle1Left"
+            },
+            {
+                "distal": "Middle2Right",
+                "index": 40,
+                "proximal": "Middle1Right",
+                "offset": {
+                    "x": 0.034502506256103516,
+                    "y": -1.9073486328125e-06,
+                    "z": 0.0
+                },
+                "length": 0.034502506256103516,
+                "localOffset": {
+                    "x": -4.11336031902465e-09,
+                    "y": 0.034502509981393814,
+                    "z": -1.2846791719312023e-07
+                },
+                "pairedBone": "Middle2Left"
+            },
+            {
+                "distal": "Middle2RightEnd",
+                "index": 41,
+                "proximal": "Middle2Right",
+                "offset": {
+                    "x": 0.03804081678390503,
+                    "y": -2.0265579223632812e-06,
+                    "z": 0.0
+                },
+                "length": 0.03804081678390503,
+                "localOffset": {
+                    "x": -4.5351811195359915e-09,
+                    "y": 0.03804082050919533,
+                    "z": -6.524894047288399e-08
+                },
+                "pairedBone": "Middle2LeftEnd"
+            },
+            {
+                "distal": "Pinky1Right",
+                "index": 47,
+                "proximal": "Pinky0Right",
+                "offset": {
+                    "x": 0.029195129871368408,
+                    "y": -1.5497207641601562e-06,
+                    "z": 0.0
+                },
+                "length": 0.029195129871368408,
+                "localOffset": {
+                    "x": -1.7406733832103782e-09,
+                    "y": 0.029195131734013557,
+                    "z": -4.4477740601678306e-08
+                },
+                "pairedBone": "Pinky1Left"
+            },
+            {
+                "distal": "Pinky2Right",
+                "index": 48,
+                "proximal": "Pinky1Right",
+                "offset": {
+                    "x": 0.028549671173095703,
+                    "y": -1.430511474609375e-06,
+                    "z": 0.0
+                },
+                "length": 0.028549671173095703,
+                "localOffset": {
+                    "x": -3.403641812838032e-09,
+                    "y": 0.028549673035740852,
+                    "z": 4.145289267398766e-08
+                },
+                "pairedBone": "Pinky2Left"
+            },
+            {
+                "distal": "Pinky2RightEnd",
+                "index": 49,
+                "proximal": "Pinky2Right",
+                "offset": {
+                    "x": 0.030848801136016846,
+                    "y": -1.430511474609375e-06,
+                    "z": 0.0
+                },
+                "length": 0.030848801136016846,
+                "localOffset": {
+                    "x": -3.6777194623027754e-09,
+                    "y": 0.030848802998661995,
+                    "z": 1.5999147251477552e-07
+                },
+                "pairedBone": "Pinky2LeftEnd"
+            },
+            {
+                "distal": "Ring1Right",
+                "index": 43,
+                "proximal": "Ring0Right",
+                "offset": {
+                    "x": 0.033382415771484375,
+                    "y": -1.7881393432617188e-06,
+                    "z": 0.0
+                },
+                "length": 0.033382415771484375,
+                "localOffset": {
+                    "x": -3.9797605211333575e-09,
+                    "y": 0.03338241949677467,
+                    "z": -6.800313911980993e-08
+                },
+                "pairedBone": "Ring1Left"
+            },
+            {
+                "distal": "Ring2Right",
+                "index": 44,
+                "proximal": "Ring1Right",
+                "offset": {
+                    "x": 0.031609177589416504,
+                    "y": -1.6689300537109375e-06,
+                    "z": 0.0
+                },
+                "length": 0.031609177589416504,
+                "localOffset": {
+                    "x": -1.884600919765944e-09,
+                    "y": 0.031609177589416504,
+                    "z": -3.9223515102548845e-08
+                },
+                "pairedBone": "Ring2Left"
+            },
+            {
+                "distal": "Ring2RightEnd",
+                "index": 45,
+                "proximal": "Ring2Right",
+                "offset": {
+                    "x": 0.03565722703933716,
+                    "y": -1.7881393432617188e-06,
+                    "z": 1.1920928955078125e-07
+                },
+                "length": 0.03565722703933716,
+                "localOffset": {
+                    "x": 1.1495836105268609e-07,
+                    "y": 0.03565723076462746,
+                    "z": 4.921379570532736e-08
+                },
+                "pairedBone": "Ring2LeftEnd"
+            },
+            {
+                "distal": "Thumb1Right",
+                "index": 51,
+                "proximal": "Thumb0Right",
+                "offset": {
+                    "x": 0.029993772506713867,
+                    "y": -1.430511474609375e-06,
+                    "z": 0.0
+                },
+                "length": 0.029993772506713867,
+                "localOffset": {
+                    "x": -1.7882371139421593e-09,
+                    "y": 0.029993774369359016,
+                    "z": 1.1590798010274739e-07
+                },
+                "pairedBone": "Thumb1Left"
+            },
+            {
+                "distal": "Thumb2Right",
+                "index": 52,
+                "proximal": "Thumb1Right",
+                "offset": {
+                    "x": 0.03105217218399048,
+                    "y": -1.9073486328125e-06,
+                    "z": 0.0
+                },
+                "length": 0.03105217218399048,
+                "localOffset": {
+                    "x": -3.702048445575201e-09,
+                    "y": 0.031052174046635628,
+                    "z": -3.063603060127207e-07
+                },
+                "pairedBone": "Thumb2Left"
+            },
+            {
+                "distal": "Thumb2RightEnd",
+                "index": 53,
+                "proximal": "Thumb2Right",
+                "offset": {
+                    "x": 0.026321887969970703,
+                    "y": -1.1920928955078125e-06,
+                    "z": 0.0
+                },
+                "length": 0.026321887969970703,
+                "localOffset": {
+                    "x": -3.1379912002194033e-09,
+                    "y": 0.026321889832615852,
+                    "z": 1.642269467083679e-07
+                },
+                "pairedBone": "Thumb2LeftEnd"
+            },
+            {
+                "distal": "Head",
+                "index": 5,
+                "proximal": "Neck",
+                "offset": {
+                    "x": -1.205632815803881e-14,
+                    "y": 0.16877031326293945,
+                    "z": 0.015833258628845215
+                },
+                "length": 0.16951139271259308,
+                "localOffset": {
+                    "x": -5.302975974194688e-15,
+                    "y": 0.16951139271259308,
+                    "z": -4.0041690851921885e-08
+                },
+                "pairedBone": ""
+            },
+            {
+                "distal": "CalfLeft",
+                "index": 55,
+                "proximal": "ThighLeft",
+                "offset": {
+                    "x": -0.0015070438385009766,
+                    "y": -0.40789610147476196,
+                    "z": -0.018181025981903076
+                },
+                "length": 0.4083038568496704,
+                "localOffset": {
+                    "x": 5.628713495298143e-09,
+                    "y": 0.4083038866519928,
+                    "z": 2.38295854160242e-08
+                },
+                "pairedBone": "CalfRight"
+            },
+            {
+                "distal": "FootLeft",
+                "index": 56,
+                "proximal": "CalfLeft",
+                "offset": {
+                    "x": 0.012857258319854736,
+                    "y": -0.403757244348526,
+                    "z": -0.03290833532810211
+                },
+                "length": 0.405300110578537,
+                "localOffset": {
+                    "x": 3.057897757230421e-08,
+                    "y": 0.40529999136924744,
+                    "z": -2.1800262857141206e-06
+                },
+                "pairedBone": "FootRight"
+            },
+            {
+                "distal": "ToeLeft",
+                "index": 57,
+                "proximal": "FootLeft",
+                "offset": {
+                    "x": 0.00011952221393585205,
+                    "y": -0.11300237476825714,
+                    "z": 0.10185885429382324
+                },
+                "length": 0.15213407576084137,
+                "localOffset": {
+                    "x": 9.057966110503912e-08,
+                    "y": 0.1521340310573578,
+                    "z": 1.1747917596949264e-05
+                },
+                "pairedBone": "ToeRight"
+            },
+            {
+                "distal": "ToeLeftEnd",
+                "index": 58,
+                "proximal": "ToeLeft",
+                "offset": {
+                    "x": -5.148351192474365e-06,
+                    "y": -0.0009429380297660828,
+                    "z": 0.12650154531002045
+                },
+                "length": 0.1265050619840622,
+                "localOffset": {
+                    "x": 1.1792055687465108e-07,
+                    "y": 0.126505047082901,
+                    "z": -9.846706916505354e-07
+                },
+                "pairedBone": "ToeRightEnd"
+            },
+            {
+                "distal": "CalfRight",
+                "index": 60,
+                "proximal": "ThighRight",
+                "offset": {
+                    "x": 0.0015102922916412354,
+                    "y": -0.4078962206840515,
+                    "z": -0.018181025981903076
+                },
+                "length": 0.40830400586128235,
+                "localOffset": {
+                    "x": -1.178012176694665e-08,
+                    "y": 0.40830403566360474,
+                    "z": 8.390174777161974e-09
+                },
+                "pairedBone": "CalfLeft"
+            },
+            {
+                "distal": "FootRight",
+                "index": 61,
+                "proximal": "CalfRight",
+                "offset": {
+                    "x": -0.012854032218456268,
+                    "y": -0.4037573039531708,
+                    "z": -0.03290833532810211
+                },
+                "length": 0.4053000807762146,
+                "localOffset": {
+                    "x": -3.1523850196890635e-08,
+                    "y": 0.4053000509738922,
+                    "z": -2.1901116724620806e-06
+                },
+                "pairedBone": "FootLeft"
+            },
+            {
+                "distal": "ToeRight",
+                "index": 62,
+                "proximal": "FootRight",
+                "offset": {
+                    "x": -0.00011865049600601196,
+                    "y": -0.11300256848335266,
+                    "z": 0.10185885429382324
+                },
+                "length": 0.1521342247724533,
+                "localOffset": {
+                    "x": -8.554924590953306e-08,
+                    "y": 0.1521342396736145,
+                    "z": 1.1758720575016923e-05
+                },
+                "pairedBone": "ToeLeft"
+            },
+            {
+                "distal": "ToeRightEnd",
+                "index": 63,
+                "proximal": "ToeRight",
+                "offset": {
+                    "x": 5.111098289489746e-06,
+                    "y": -0.0009427592158317566,
+                    "z": 0.12650172412395477
+                },
+                "length": 0.12650524079799652,
+                "localOffset": {
+                    "x": -1.221958285668734e-07,
+                    "y": 0.12650524079799652,
+                    "z": -1.2092613133063423e-06
+                },
+                "pairedBone": "ToeLeftEnd"
+            }
+        ]
+    }
+}
