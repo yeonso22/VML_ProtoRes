@@ -30,8 +30,6 @@ ExportedObj/
 data/
 output/
 runs/
-datasets/
-logs/
 infer_output/
 
 # Unity3D generated meta files

@@ -14,12 +14,17 @@ VML_ProtoRes/
   requirements.txt
   LICENSE.md
   protores/
+  datasets/
+  logs/
 ```
 
 Large files are not included in git:
 
 ```text
-protores/logs/
+logs/
+  hparams.yaml
+  checkpoints/
+    epoch=1999.ckpt
 ```
 
 ## Required External Files
@@ -27,13 +32,11 @@ protores/logs/
 Before running inference, place the missing checkpoint files like this:
 
 ```text
-  protores/logs/
-    hparams.yaml
-    checkpoints/
-      epoch=1999.ckpt
+logs/
+  hparams.yaml
+  checkpoints/
+    epoch=1999.ckpt
 ```
-
-Default paths are set in `infer.py`:
 
 
 ## Environment
@@ -54,25 +57,20 @@ Example 1 :
 
 ```bash
 python infer.py \
-  --input ./datasets/deeppose_paper2021_minimixamo/clipgroup/input_ex_minimixamo_test_6PointsEffectors.csv --output ./infer_output/output_test_6points.csv
+  --input ./datasets/deeppose_paper2021_minimixamo/input_ex_minimixamo_test_6PointsEffectors.csv --output ./infer_output/output_test_6points.csv
 ```
 
 Example 2 : 
 
 ```bash
 python infer.py \
-  --input ./datasets/deeppose_paper2021_minimixamo/clipgroup/input_ex.npy --output ./infer_output/output_pose.csv
-```
-
-The script saves both:
-
-```text
-infer_output/~~.csv
-infer_output/~~.npy
+  --input ./datasets/deeppose_paper2021_minimixamo/input_ex.npy --output ./infer_output/output_pose.csv
 ```
 
 
 ## Input Format
+
+You may choose either CSV or npy as input. 
 
 ### Input 1: CSV
 
@@ -131,6 +129,8 @@ To choose which joints are used as inputs, modify the 'EFFECTOR_JOINTS_NUMPY' li
 
 ## Output Format
 
+Code generates two files; CSV and Numpy.
+
 ### Output 1: CSV
 
 CSV file, where row is batch, and column is listed all 64 joints' position and rotation information.
@@ -138,7 +138,7 @@ CSV file, where row is batch, and column is listed all 64 joints' position and r
 #### Global Position
 
 ```text
-Shape  : (frame, 64*3)
+Shape  : (batch, 64*3)
 Columns: BonePositions_{joint1}_X
          BonePositions_{joint1}_Y
          BonePositions_{joint1}_Z
@@ -151,7 +151,7 @@ Columns: BonePositions_{joint1}_X
 #### Relative Rotation
 
 ```text
-Shape  : (frame, 64*4) 
+Shape  : (batch, 64*4) 
 Columns: BoneRotations_{joint1}_X   (quaternion x)
          BoneRotations_{joint1}_Y   (quaternion y)
          BoneRotations_{joint1}_Z   (quaternion z)
@@ -180,13 +180,13 @@ Numpy file, where the size is [Batch Size, Number of Every Joints(64), 4, 4]
 
 ## Skeleton
 
-- Total joints: 64
+- number of Total joints: 64
 - Each joint has:
     - Position : 1 x Vector3 (x, y, z)
     - Rotation : 1 x Quaternion (x, y, z, w)
 - Defined in:
   datasets/deeppose_paper2021_minimixamo/dataset_settings.json
-- Hips, Spine0, Spine1, Chest, Neck, Head, ClavicleLeft, ClavicleRight, BicepLeft, ForearmLeft, HandLeft,
+- Joint Lists : Hips, Spine0, Spine1, Chest, Neck, Head, ClavicleLeft, ClavicleRight, BicepLeft, ForarmLeft, HandLeft,
   Index0Left, Index1Left, Index2Left, Index2LeftEnd, Middle0Left, Middle1Left, Middle2Left, Middle2LeftEnd,
   Ring0Left, Ring1Left, Ring2Left, Ring2LeftEnd, Pinky0Left, Pinky1Left, Pinky2Left, Pinky2LeftEnd, Thumb0Left,
   Thumb1Left, Thumb2Left, Thumb2LeftEnd, BicepRight, ForarmRight, HandRight, Index0Right, Index1Right,

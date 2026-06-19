@@ -1,0 +1,3 @@
+The dataset is licensed under the Adobe General Terms of Use (https://www.adobe.com/legal/terms.html) and the Maximo Additional Terms (https://wwwimages2.adobe.com/content/dam/cc/en/legal/servicetou/Mixamo-Addl-Terms-en_US-20210623.pdf). 
+It is attributed to Adobe Inc, and the original version can be found at https://www.mixamo.com/#/?page=1&type=Motion%2CMotionPack.
+To use or share the data, you must give attribution to Adobe Inc., provide references to the above Adobe/Maximo terms and conditions, and agree not to use the dataset for commercial development purposes.
