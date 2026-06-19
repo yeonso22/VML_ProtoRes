@@ -17,14 +17,10 @@ from protores.geometry.skeleton import Skeleton
 from protores.losses.weighted_geodesic import weighted_geodesic_loss
 from protores.losses.weighted_mse import weighted_mse
 from protores.geometry.vector import normalize_vector
-from protores.data.base_module import BaseDataModuleOptions
 from protores.utils.model_factory import ModelFactory
-from protores.utils.onnx_export import export_named_model_to_onnx
 from protores.utils.options import BaseOptions
 
 TYPE_VALUES = {'position': 0, 'rotation': 1, 'lookat': 2}
-
-from protores.evaluation.eval_model import RANDOM_EFFECTOR_COUNTS, BenchmarkEvaluator
 
 
 def compute_weights_from_std(std: torch.Tensor, max_weight: float, std_at_max: float = 1e-3) -> torch.Tensor:
@@ -34,7 +30,7 @@ def compute_weights_from_std(std: torch.Tensor, max_weight: float, std_at_max: f
 
 @dataclass
 class OptionalLookAtModelOptions(BaseOptions):
-    dataset: BaseDataModuleOptions = BaseDataModuleOptions()
+    dataset: Any = None
     max_effector_weight: float = 1000.0
     use_fk_loss: bool = True
     use_rot_loss: bool = True
@@ -138,10 +134,6 @@ class OptionalLookAtModel(pl.LightningModule):
         self.validation_random_rotation_metric = RotationMatrixError(compute_on_step=False)
 
         self.evaluator = None
-        if opts.benchmark != 'None':
-            self.evaluator = BenchmarkEvaluator(datasets_path=opts.dataset.path,
-                                                random_effector_counts=RANDOM_EFFECTOR_COUNTS,
-                                                benchmark=opts.benchmark, device='cpu', verbose=False)
 
     def create_backbone(self):
 
@@ -671,6 +663,7 @@ class OptionalLookAtModel(pl.LightningModule):
 
         dummy_input = self.get_dummy_input()
         # opset 11 needed for Round operator
+        from protores.utils.onnx_export import export_named_model_to_onnx
         export_named_model_to_onnx(self, dummy_input, filepath, verbose=True, opset_version=11,
                                    dynamic_axes=dynamic_axes, **kwargs)
 

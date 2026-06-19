@@ -11,7 +11,6 @@ from omegaconf import OmegaConf
 from protores.geometry.quaternions import compute_quaternions_from_rotation_matrices
 from protores.geometry.rotations import (compute_rotation_matrix_from_ortho6d,
                                                   compute_rotation_matrix_from_quaternion,
-                                                  compute_geodesic_distance_from_two_matrices,
                                                   compute_ortho6d_from_rotation_matrix)
 from protores.geometry.skeleton import Skeleton
 
@@ -123,10 +122,6 @@ def prepare_input_from_csv(df, skeleton, args, device):
         col.replace("BoneRotations_", "").replace("_X", "")
         for col in df.columns if col.startswith("BoneRotations_") and col.endswith("_X")
     ]
-    # lookat_joints = [
-    #     col.replace("LookAtTarget_", "").replace("_X", "")
-    #     for col in df.columns if col.startswith("LookAtTarget_") and col.endswith("_X")
-    # ]
 
     # (2) position 데이터 준비하기
     num_position_effectors = len(position_joints)
@@ -171,37 +166,6 @@ def prepare_input_from_csv(df, skeleton, args, device):
         rotation_weight    = torch.zeros((batch_size, 0), dtype=torch.float32)
         rotation_tolerance = torch.zeros((batch_size, 0), dtype=torch.float32)
 
-    # # (4) lookat 데이터 준비하기
-    # if lookat_joints:
-    #     num_lookat = len(lookat_joints)
-    #     lookat_targets = np.stack([
-    #         df[[f"LookAtTarget_{j}_X", f"LookAtTarget_{j}_Y", f"LookAtTarget_{j}_Z"]].values
-    #         for j in lookat_joints
-    #     ], axis=1).astype(np.float32) 
-
-    #     # local direction: CSV에 있으면 읽고, 없으면 기본값 (0, 0, 1) 사용
-    #     if f"LookAtDir_{lookat_joints[0]}_X" in df.columns:
-    #         lookat_dirs = np.stack([
-    #             df[[f"LookAtDir_{j}_X", f"LookAtDir_{j}_Y", f"LookAtDir_{j}_Z"]].values
-    #             for j in lookat_joints
-    #         ], axis=1).astype(np.float32)
-    #     else:
-    #         lookat_dirs = np.zeros((batch_size, num_lookat, 3), dtype=np.float32)
-    #         lookat_dirs[:, :, 2] = 1.0
-    #         print("LookAtDir column not found → using default direction (0, 0, 1)")
-
-    #     lookat_data = np.concatenate([lookat_targets, lookat_dirs], axis=-1)  # (batch_size, num_lookat, 6)
-
-    #     lookat_ids       = [skeleton.bone_indexes[name] for name in lookat_joints]
-    #     lookat_id        = torch.tensor(lookat_ids, dtype=torch.int64).unsqueeze(0).repeat(batch_size, 1)
-    #     lookat_weight    = torch.ones((batch_size, num_lookat), dtype=torch.float32)
-    #     lookat_tolerance = torch.full((batch_size, num_lookat), args.lookat_tolerance, dtype=torch.float32)
-    #     lookat_data      = torch.tensor(lookat_data)
-    # else:
-    #     lookat_data      = torch.zeros((batch_size, 0, 6), dtype=torch.float32)
-    #     lookat_id        = torch.zeros((batch_size, 0), dtype=torch.int64)
-    #     lookat_weight    = torch.zeros((batch_size, 0), dtype=torch.float32)
-    #     lookat_tolerance = torch.zeros((batch_size, 0), dtype=torch.float32)
 
     lookat_data      = torch.zeros((batch_size, 0, 6), dtype=torch.float32)
     lookat_id        = torch.zeros((batch_size, 0), dtype=torch.int64)
@@ -299,7 +263,6 @@ Usage: python infer.py --input <input_csv> [options]
 
 [Optional]
   --output <path>            Output CSV path (default: ./output_pose.csv)
-  --gt <path>                Ground truth CSV path for evaluation (default: None)
   --position_tolerance <float>  Tolerance for position effectors (default: 0.0)
   --rotation_tolerance <float>  Tolerance for rotation effectors (default: 0.0)
 """)
@@ -310,8 +273,6 @@ Usage: python infer.py --input <input_csv> [options]
                         help='input path')
     parser.add_argument('--output',          type=str, default='./infer_output/output_pose.csv',
                         help='output CSV path (default: ./output_pose.csv)')
-    parser.add_argument('--gt',              type=str, default=None,
-                        help='ground truth CSV path (optional, for evaluation)')
     parser.add_argument('--position_tolerance', type=float, default=0.0,
                     help='tolerance for position effectors (default: 0.0)')
     parser.add_argument('--rotation_tolerance', type=float, default=0.0,
@@ -359,6 +320,9 @@ Usage: python infer.py --input <input_csv> [options]
     #    참고: Labs/Projects/ProtoRes/code/protores/evaluation/eval_model.py
     #          fixed_points_benchmark()
     # ============================================================
+    output_dir = os.path.dirname(args.output)
+    if output_dir:
+        os.makedirs(output_dir, exist_ok=True)
     save_predictions(skeleton, predictions, args.output)
 
     # ============================================================
@@ -393,82 +357,3 @@ Usage: python infer.py --input <input_csv> [options]
     ## (3) npy 저장
     print(f"Shape of {np_output_path}: {output_numpy.shape}")
     np.save(np_output_path, output_numpy)
-
-
-    # ============================================================
-    # 6. GT와 비교 (옵션, --gt 인자가 있을 때만 실행)
-    #    참고: Labs/Projects/ProtoRes/code/protores/evaluation/eval_utils.py
-    #          get_confidence_interval_margins()
-    #          update_test_metrics() in optional_lookat_model.py
-    # ============================================================
-    if args.gt is not None:
-        all_joints = [skeleton.index_bones[i] for i in range(skeleton.nb_joints)]
-        gt_df = pd.read_csv(args.gt)
-
-        # (1) position 비교
-        # GT position 로드: (batch_size, nb_joints, 3)
-        gt_positions = np.stack([
-            gt_df[[f"BonePositions_{j}_X", f"BonePositions_{j}_Y", f"BonePositions_{j}_Z"]].values
-            for j in all_joints
-        ], axis=1).astype(np.float32)
-
-        pred_positions = predictions["joint_positions"].cpu().detach().numpy()
-
-        # MSE: 전체 joint position의 평균 제곱 오차
-        mse = np.mean((pred_positions - gt_positions) ** 2)
-
-        # L2: joint별 예측-GT 거리 (axis=2는 xyz 방향)
-        # l2_per_joint shape: (batch_size, nb_joints)
-        l2_per_joint      = np.linalg.norm(pred_positions - gt_positions, axis=2)
-        mean_l2           = np.mean(l2_per_joint)
-        mean_l2_per_joint = np.mean(l2_per_joint, axis=0)  # frame 방향 평균 → (nb_joints,)
-
-        # (2) rotation 비교
-        # geodesic distance로 rotation 오차 측정
-        # (두 rotation matrix 사이의 각도 차이, 단위: radian)
-
-        # GT rotation: quaternion(xyzw) → wxyz 변환 → rotation matrix
-        gt_quat = np.stack([
-            gt_df[[f"BoneRotations_{j}_X", f"BoneRotations_{j}_Y",
-                   f"BoneRotations_{j}_Z", f"BoneRotations_{j}_W"]].values
-            for j in all_joints
-        ], axis=1).astype(np.float32)  # (batch_size, nb_joints, 4) xyzw
-
-        # xyzw → wxyz (protores 내부 포맷)
-        gt_quat_wxyz = np.concatenate([gt_quat[..., 3:4], gt_quat[..., :3]], axis=-1)
-        gt_rot_mat = compute_rotation_matrix_from_quaternion(
-            torch.tensor(gt_quat_wxyz).view(-1, 4)
-        ).view(-1, skeleton.nb_joints, 3, 3).to(DEVICE)
-
-        # # predicted rotation: 6D rotation → rotation matrix
-        pred_rot_mat_2 = compute_rotation_matrix_from_ortho6d(
-            predictions["joint_rotations"].view(-1, 6)
-        ).view(-1, skeleton.nb_joints, 3, 3)
-
-        # geodesic distance: 두 rotation matrix 사이의 각도 차이 (radian)
-        # shape: (batch_size * nb_joints,) → (batch_size, nb_joints)로 reshape
-        geodesic = compute_geodesic_distance_from_two_matrices(
-            pred_rot_mat_2.view(-1, 3, 3),
-            gt_rot_mat.view(-1, 3, 3)
-        ).view(-1, skeleton.nb_joints)
-
-        mean_geodesic           = geodesic.mean().item()
-        mean_geodesic_per_joint = geodesic.mean(dim=0).cpu().numpy()  # (nb_joints,)
-
-        # (3) 결과 출력
-        print(f"\n=== GT Evaluation ===")
-
-        print(f"\n[Position]")
-        print(f"MSE            : {mse:.6f}")
-        print(f"Mean L2        : {mean_l2:.6f}")
-        print(f"\nTop 5 joints with largest L2 error:")
-        top5_pos = np.argsort(mean_l2_per_joint)[::-1][:5]
-        for idx in top5_pos:
-            print(f"  {all_joints[idx]:20s}: {mean_l2_per_joint[idx]:.6f}")
-
-        print(f"\n[Rotation]")
-        print(f"Mean Geodesic  : {mean_geodesic:.6f} rad")
-        print(f"\nTop 5 joints with largest Geodesic error:")
-        top5_rot = np.argsort(mean_geodesic_per_joint)[::-1][:5]
-        for idx in top5_rot:
-            print(f"  {all_joints[idx]:20s}: {mean_geodesic_per_joint[idx]:.6f} rad")
